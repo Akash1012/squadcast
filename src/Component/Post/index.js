@@ -175,7 +175,17 @@ function Post() {
 
   return (
     <>
-      <h3 className="header">What's is happening</h3>
+      <h3 className="header">
+        What's is happening (NOTE: NO USE OF 3RD PARTY PACKAGE)
+      </h3>
+      <h4
+        style={{
+          color: "red",
+          textAlign: "center",
+        }}
+      >
+        (NOTE: NO USE OF 3RD PARTY PACKAGE)
+      </h4>
       <div className="autocomplete" ref={autocompleteRef}>
         <textarea
           id="inputText"
@@ -186,15 +196,7 @@ function Post() {
           onChange={(e) => optimisedCall(e)}
           placeholder="Mention"
           onKeyUp={handleKeyUp}
-        >
-          {["akash"].map((item) => {
-            return (
-              <>
-                <span>{item}</span>
-              </>
-            );
-          })}
-        </textarea>
+        />
 
         {show && (
           <ul ref={selectRef}>
