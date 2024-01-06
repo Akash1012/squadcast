@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+}
+.autocomplete {
+  width: 500px;
+  margin: auto;
+}
+
+.autocomplete > textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.autocomplete > ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid lightgray;
+  height: 300px;
+  width: 200px;
+  overflow: auto;
+}
+
+.autocomplete > ul > li {
+  padding: 8px;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+ul > .active,
+ul li:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn_post {
+  text-align: end;
+}
+
+button {
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgb(29, 155, 240);
+  color: white;
+  font-weight: bold;
+}
+
+ul {
+  position: absolute;
+  z-index: 10;
+}
+
+li {
+  position: relative;
+  background-color: aliceblue;
+}
+
+.highlight {
+  background-color: yellow !important;
+}
