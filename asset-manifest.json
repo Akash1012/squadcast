@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/squadcast/static/css/main.c9bb8990.css",
-    "main.js": "/squadcast/static/js/main.635a4b25.js",
+    "main.js": "/squadcast/static/js/main.ab12406b.js",
     "static/js/787.14b0b4c7.chunk.js": "/squadcast/static/js/787.14b0b4c7.chunk.js",
     "index.html": "/squadcast/index.html",
     "main.c9bb8990.css.map": "/squadcast/static/css/main.c9bb8990.css.map",
-    "main.635a4b25.js.map": "/squadcast/static/js/main.635a4b25.js.map",
+    "main.ab12406b.js.map": "/squadcast/static/js/main.ab12406b.js.map",
     "787.14b0b4c7.chunk.js.map": "/squadcast/static/js/787.14b0b4c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9bb8990.css",
-    "static/js/main.635a4b25.js"
+    "static/js/main.ab12406b.js"
   ]
 }
