@@ -70,8 +70,11 @@ function Post() {
 
   function handleInputChange(event) {
     let getTheInputText = event.target.value;
+
     const checkEnter = getTheInputText.split("");
-    if (checkEnter[checkEnter.length - 1] !== "\n") {
+    console.log("checkEnter", checkEnter);
+    if (checkEnter[checkEnter.length - 1] !== "n") {
+      // debugger;
       setStorePreviousValue(getTheInputText);
     }
   }
