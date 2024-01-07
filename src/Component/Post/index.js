@@ -178,9 +178,7 @@ function Post() {
 
   return (
     <>
-      <h3 className="header">
-        What's is happening (NOTE: NO USE OF 3RD PARTY PACKAGE)
-      </h3>
+      <h3 className="header">What's is happening</h3>
       <h4
         style={{
           color: "red",
