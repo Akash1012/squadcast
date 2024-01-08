@@ -16,6 +16,8 @@ function Post() {
     total: 0,
   });
 
+  const [forEnter, setForEnter] = useState(false);
+
   useEffect(() => {
     const closeList = (event) => {
       if (
@@ -42,13 +44,15 @@ function Post() {
           total: items.total,
           loading: false,
         });
+
         setData(items.users);
+        setShow(true);
       });
   };
 
   const handleClick = (title) => {
     let splitTheValue = value.split(" ");
-    splitTheValue[splitTheValue.length - 1] = "@" + title;
+    splitTheValue[splitTheValue.length - 1] = "@" + title + " ";
     setValue(splitTheValue.join(" "));
     setShow(false);
   };
@@ -62,7 +66,7 @@ function Post() {
       setValue(args[0].target.value);
       timer = setTimeout(() => {
         fn(...args);
-      }, 50);
+      }, 500);
     };
   }
 
@@ -73,9 +77,16 @@ function Post() {
 
     const checkEnter = getTheInputText.split("");
     console.log("checkEnter", checkEnter);
-    if (checkEnter[checkEnter.length - 1] !== "n") {
-      // debugger;
+    if (
+      checkEnter[checkEnter.length - 1] !== "n" &&
+      checkEnter[checkEnter.length - 1] !== "\n" &&
+      !forEnter
+    ) {
       setStorePreviousValue(getTheInputText);
+    }
+
+    if (checkEnter[checkEnter.length - 1] === "@") {
+      getTheData();
     }
   }
 
@@ -86,11 +97,14 @@ function Post() {
       let compareCurrentPreviousValue = storePreviousValue
         ?.split(" ")
         .filter((item) => !savePreviousText.includes(item));
+
       savePreviousText = storePreviousValue?.split(" ");
       let joinTheText = compareCurrentPreviousValue.join("");
       let findTheIndexOfTag = joinTheText.indexOf("@");
+      console.log("findTheIndexOfTag", findTheIndexOfTag);
 
       if (findTheIndexOfTag !== -1 && letSplit[letSplit.length - 1] !== " ") {
+        console.log("join", joinTheText);
         getTheData(joinTheText.slice(1));
         setShow(true);
         return;
@@ -204,6 +218,7 @@ function Post() {
             {data.map((item, index) => {
               return (
                 <li
+                  key={index}
                   className={index === activeIndex && "active"}
                   onClick={() => handleClick(item.firstName)}
                 >

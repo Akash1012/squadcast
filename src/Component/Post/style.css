@@ -62,7 +62,7 @@ ul {
 
 li {
   position: relative;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 }
 
 .highlight {
